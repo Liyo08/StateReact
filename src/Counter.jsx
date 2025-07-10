@@ -1,8 +1,18 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 function Counter() {
-    const [count, setCount] = useState(0);
+     const [count, setCount] = useState(0);
+    useEffect(() => {
+        console.log("Component mounted....");
+        console.log("Count has changed to..... "+count);
+        
+        return () => {
+            console.log("Component unmounted....");
+        }
+       
+    },[count]);
+   
   return (
     <div>
         <button onClick={() => setCount(count + 1)}>Increment</button>
