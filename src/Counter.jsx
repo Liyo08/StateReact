@@ -6,10 +6,6 @@ function Counter() {
     useEffect(() => {
         console.log("Component mounted....");
         console.log("Count has changed to..... "+count);
-        
-        return () => {
-            console.log("Component unmounted....");
-        }
        
     },[count]);
    
